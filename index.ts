@@ -9,14 +9,14 @@ import { wrapReq, wrapRes, Incoming, Outgoing } from './reqres.js';
   * Creates a new server instance
   *
   */
-export default function() {
+export default function(): Server {
   return new Server();
 }
 
 /**
   * @class Server handler class
   */
-class Server {
+export class Server {
   private routes: Router;
   private middlewares: Router;
   public route: Function;

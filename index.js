@@ -12,7 +12,7 @@ export default function () {
 /**
   * @class Server handler class
   */
-class Server {
+export class Server {
     constructor() {
         /**
           * Handler, to be passed onto server
