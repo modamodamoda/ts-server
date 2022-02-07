@@ -50,3 +50,25 @@ const newRouter = new FastRouter();
 newRouter.get('/route-1', (req, res) => res.end('test'));
 app.use('/', newRouter); // /route-1 -> 'test'
 ```
+
+## Decorators
+
+You can define controllers using typescript decorators.
+
+```ts
+import { Controller, Route, Middleware, Request, Response } from 'ts-server/decorators';
+
+@Controller('/test')
+class testController {
+  @Route()
+  index(@Request() req, @Response() res) {
+    // do something..
+  }
+  @Middleware()
+  beforeAll(@Request() req, @Response() res) {
+    // do something..
+  }
+}
+
+app.controller(testController)
+```
